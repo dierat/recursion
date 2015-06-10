@@ -4,12 +4,15 @@
 // but you don't so you're going to write it from scratch:
 
 var stringifyJSON = function(obj) {
+  // specific behavior for certain argument types
   if (typeof obj === 'function' || typeof obj === 'undefined'){
   	return '';
   } else if (obj === null) {
     return 'null';
   } else if (typeof obj === 'string'){
     return '"' + obj + '"';
+
+  // arrays and objects require looping over the values and use recursive calls for each value
   } else if (Array.isArray(obj)){
     if (obj.length === 0) {
       return '[' + ']';
@@ -34,6 +37,9 @@ var stringifyJSON = function(obj) {
       str = str.slice(0, str.length-1);
   	}
   	return str += '}';
+
+  // default behavior is to convert the argument into a string; works for numbers and booleans	
+  } else {
+    return obj.toString();
   }
-  return obj.toString();
 };
