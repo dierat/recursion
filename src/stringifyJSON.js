@@ -14,18 +14,15 @@ var stringifyJSON = function(obj) {
 
   // arrays and objects require looping over the values and use recursive calls for each value
   } else if (Array.isArray(obj)){
-    if (obj.length === 0) {
-      return '[' + ']';
-    } else {
-      var str = '[';
-      for (var i=0; i<obj.length; i++){
-        str += stringifyJSON(obj[i]);
-        if (i !== obj.length-1){
-          str += ',';
-        }
+    var str = '[';
+    for (var i=0; i<obj.length; i++){
+      str += stringifyJSON(obj[i]);
+      if (i !== obj.length-1){
+        str += ',';
       }
-      return str += ']';
-    }	
+    }
+  return str += ']';
+ 
   } else if (typeof obj === 'object'){
   	var str = '{';
   	for (var key in obj){
