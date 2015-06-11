@@ -6,5 +6,15 @@
 // But instead we're going to implement it from scratch:
 var getElementsByClassName = function(className
 ){
-  // your code here
+  var resultElements = [];
+  var children = document.body.children;
+  if ( $(body).hasClass(className) ){
+  	resultElements.push();
+  }
+  for (var i=0; i<children.length; i++){
+  	if ( children[i].hasClass() ){
+  		resultElements.push();
+  	}
+  }
+  return resultElements;
 };
