@@ -8,12 +8,12 @@ var getElementsByClassName = function(className
 ){
   var resultElements = [];
   var children = document.body.children;
-  if ( $(body).hasClass(className) ){
-  	resultElements.push();
+  if ( $('body').hasClass(className) ){
+  	resultElements.push(document.body);
   }
   for (var i=0; i<children.length; i++){
-  	if ( children[i].hasClass() ){
-  		resultElements.push();
+  	if ( $(children[i]).hasClass(className) ){
+  		resultElements.push(children[i]);
   	}
   }
   return resultElements;
