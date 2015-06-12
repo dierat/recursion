@@ -5,15 +5,7 @@
 
 // But instead we're going to implement it from scratch:
 var getElementsByClassName = function(className){
-  var resultElements = [];
-  if ( $('body').hasClass(className) ){
-  	resultElements.push(document.body);
-  }
-  var children = document.body.children;
-  for (var i=0; i<children.length; i++){
-    resultElements.push( checkClassName(children[i], className) );
-  }
-  return _.flatten(resultElements);
+  return _.flatten([ checkClassName(document.body, className) ]);
 };
  
 var checkClassName = function(elem, className){
@@ -27,4 +19,4 @@ var checkClassName = function(elem, className){
     }
   }
   return elemsWithClass;
-}
+};
