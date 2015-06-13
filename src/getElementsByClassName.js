@@ -10,7 +10,7 @@ var getElementsByClassName = function(className){
  
 var checkClassName = function(elem, className){
   var elemsWithClass = [];
-  if ( $(elem).hasClass(className) ){
+  if ( elem.classList.contains(className) ){
     elemsWithClass.push(elem);
   }
   if (elem.children.length > 0){
